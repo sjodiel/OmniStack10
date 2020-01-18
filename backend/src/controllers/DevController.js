@@ -24,7 +24,7 @@ module.exports = {
 
         const location = {
           type: 'Point',
-          coordinates: [ongitude, latitude],
+          coordinates: [longitude, latitude],
         };
         //console.log(name, avatar_url, bio, github_username, techsArray);
         dev = await Dev.create({
