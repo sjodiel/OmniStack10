@@ -7,7 +7,7 @@ module.exports = {
   async index (request, response) {
     const devs = await Dev.find();
 
-    return response.json(dev);
+    return response.json(devs);
   },
 
   async store (request, response) {
@@ -34,7 +34,7 @@ module.exports = {
           bio,
           techs: techsArray,
           location,
-        });
+        })
       }
 
       return response.json(dev);

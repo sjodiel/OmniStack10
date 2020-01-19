@@ -1,3 +1,3 @@
-module.exports = function parseStringAsArray(arrayAsArray){
-  return arrayAsArray.split(',').map(tech => tech.trim());
+module.exports = function parseStringAsArray(arrayAsString){
+  return arrayAsString.split(',').map(tech => tech.trim());
 }
