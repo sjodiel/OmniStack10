@@ -34,7 +34,7 @@ module.exports = {
           bio,
           techs: techsArray,
           location,
-        })
+        });
       }
 
       return response.json(dev);
