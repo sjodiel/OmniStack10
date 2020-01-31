@@ -4,7 +4,16 @@ const socket = socketio('http://192.168.42.81:3001', {
     autoConnect: false,
 });
 
-function connect() {
+function subscribeToNewDevs(subscribeFunction) {
+    socket.on('new-dev', subscribeFunction);
+}
+function connect( latitude, longitude, techs) {
+    socket.io.opts.query = {
+        latitude,
+        longitude,
+        techs,
+    };
+
     socket.connect();
 }
 
@@ -17,4 +26,5 @@ function disconnect() {
 export {
     connect,
     disconnect,
+    subscribeToNewDevs,
 };
