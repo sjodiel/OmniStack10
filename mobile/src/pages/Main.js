@@ -35,6 +35,10 @@ function Main({ navigation }) {
     loadInitialPosition();
   }, []);
 
+  useEffect(() => {
+    subscribeToNewDevs(devs => setDevs([...devs, dev]));
+  }, [devs]);
+
   function setupWebsocket() {
     disconnect();
 
@@ -46,7 +50,6 @@ function Main({ navigation }) {
       techs,
     );
 
-    subscribeToNewDevs
   }
   
   async function loadDevs() {
